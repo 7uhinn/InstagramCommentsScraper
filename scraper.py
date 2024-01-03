@@ -45,7 +45,7 @@ def get_comments(plain_html):
 
 
 def click_more_comments(driver):
-    post_address = input("Enter the Post Address and Press Enter: ")
+    post_address = input("Enter the Instagram Post Address and Press Enter: ")
     print("Please wait...")
     driver.get(post_address)
     driver.implicitly_wait(5)
