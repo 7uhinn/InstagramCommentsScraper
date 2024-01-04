@@ -6,10 +6,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import ElementNotVisibleException, TimeoutException
+from selenium.webdriver.chrome.service import Service
 
 
 def init_driver():
-    driver = webdriver.Chrome('/Users/7uhinn/Documents/Development/chromedriver_mac_arm64/chromedriver')
+    service = Service()
+    options = webdriver.ChromeOptions()
+    driver = webdriver.Chrome(service=service, options=options)
     driver.wait = WebDriverWait(driver, 5)
     return driver
 
