@@ -52,10 +52,16 @@ def click_more_comments(driver):
     print("Please wait...")
     driver.get(post_address)
     driver.implicitly_wait(5)
-    while driver.find_elements_by_xpath('//span[@aria-label="Load more comments"]'):
-        button = driver.find_element_by_xpath('//span[@aria-label="Load more comments"]')
+    try:
+        button = driver.find_element(By.XPATH, "//a[contains(text(), 'Log in')]")
         button.click()
+        login_name = driver.find_element(By.XPATH, "//input[@class='_aa4b _add6 _ac4d _ap35']")
+        login_name.send_keys("username")
         driver.implicitly_wait(10)
+    except:
+        pass
+    
+    
     return driver.page_source
 
 
