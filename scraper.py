@@ -57,6 +57,12 @@ def click_more_comments(driver):
         button.click()
         login_name = driver.find_element(By.XPATH, "//input[@class='_aa4b _add6 _ac4d _ap35']")
         login_name.send_keys("username")
+        pass_name = driver.find_element(By.XPATH, "//input[@type='password']")
+        pass_name.send_keys("password")
+        button2 = driver.find_element(By.XPATH, "//div[contains(text(), 'Log in')]")
+        button2.click()
+        button3 = driver.find_element(By.XPATH, "//div[contains(text(), 'Not now')]")
+        button3.click()
         driver.implicitly_wait(10)
     except:
         pass
