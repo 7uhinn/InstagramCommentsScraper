@@ -49,6 +49,8 @@ def get_comments(plain_html):
 
 def click_more_comments(driver):
     post_address = input("Enter the Instagram Post Address and Press Enter: ")
+    username = input("Enter the Instagram Username and Press Enter: ")
+    password = input("Enter the Instagram Password and Press Enter: ")
     print("Please wait...")
     driver.get(post_address)
     driver.implicitly_wait(5)
@@ -56,9 +58,9 @@ def click_more_comments(driver):
         button = driver.find_element(By.XPATH, "//a[contains(text(), 'Log in')]")
         button.click()
         login_name = driver.find_element(By.XPATH, "//input[@class='_aa4b _add6 _ac4d _ap35']")
-        login_name.send_keys("username")
+        login_name.send_keys(username)
         pass_name = driver.find_element(By.XPATH, "//input[@type='password']")
-        pass_name.send_keys("password")
+        pass_name.send_keys(password)
         button2 = driver.find_element(By.XPATH, "//div[contains(text(), 'Log in')]")
         button2.click()
         button3 = driver.find_element(By.XPATH, "//div[contains(text(), 'Not now')]")
