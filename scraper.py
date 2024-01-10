@@ -20,10 +20,11 @@ def init_driver():
 def get_comments(plain_html):
     lan = input("Only English Comments (y/n): ")
     soup = bs(plain_html, 'html.parser')
-    comments = soup.find_all('li', {'class':'gElp9'})
+    comments = soup.find_all('div', {'class':'_ap3a _aaco _aacw _aacx _aad7 _aade'})
     encount = 0
     all_comments = []
     en_comments = []
+    print(comments)
     for i in range(len(comments)):
         if i == 0:
             continue
